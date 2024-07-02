@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Order - Food Delight</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .order-edit {
+            margin: 20px 0;
+        }
+        .order-edit h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        .order-item input {
+            width: 60px;
+            text-align: center;
+        }
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .buttons .update {
+            background-color: #4CAF50;
+            color: #ffffff;
+        }
+        .buttons .update:hover {
+            background-color: #45a049;
+        }
+        .buttons .confirm {
+            background-color: #007BFF;
+            color: #ffffff;
+        }
+        .buttons .confirm:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Order</h1>
+
+        <div class="order-edit">
+            <h2>Order Details</h2>
+            <form id="edit-order-form">
+                <div class="order-item">
+                    <span>Pizza Margherita</span>
+                    <input type="number" name="pizza" value="1" min="0">
+                    <span>$12.00</span>
+                </div>
+                <div class="order-item">
+                    <span>Caesar Salad</span>
+                    <input type="number" name="salad" value="1" min="0">
+                    <span>$8.00</span>
+                </div>
+                <div class="order-item">
+                    <span>Chocolate Cake</span>
+                    <input type="number" name="cake" value="1" min="0">
+                    <span>$5.00</span>
+                </div>
+                <div class="total">
+                    Total: $25.00
+                </div>
+            </form>
+        </div>
+
+        <div class="buttons">
+            <button class="update" onclick="updateOrder()">Update Order</button>
+            <button class="confirm" onclick="confirmOrder()">Confirm Order</button>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Food Delight. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function updateOrder() {
+            // This function will calculate the updated total based on the quantities entered
+            const form = document.getElementById('edit-order-form');
+            const pizzaQty = form.pizza.value;
+            const saladQty = form.salad.value;
+            const cakeQty = form.cake.value;
+
+            const total = (pizzaQty * 12) + (saladQty * 8) + (cakeQty * 5);
+            document.querySelector('.total').innerText = 'Total: $' + total.toFixed(2);
+        }
+
+        function confirmOrder() {
+            // This function can be expanded to submit the order to the server
+            alert('Order confirmed! Redirecting to order confirmation page...');
+            window.location.href = 'order-confirmation.html';
+        }
+    </script>
+</body>
+</html>

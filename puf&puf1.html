@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Food Ordering Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #DC143C;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav {
+            background-color: #333;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1em;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 1em;
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2em;
+        }
+        .menu-item {
+            border: 1px solid #ddd;
+            margin: 1em 0;
+            padding: 1em;
+            background-color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to puf&puf</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="menu">
+            <h2>Menu</h2>
+            <div class="menu-item">
+                <h3>Egg Puffs</h3>
+                <p>Delicious Egg puffs with a tasty masala and a crispy crust. €6</p>
+            </div>
+            <div class="menu-item">
+                <h3>Beef pufs</h3>
+                <p>with special spicy beef inside beef puffs. €9</p>
+            </div>
+            <div class="menu-item">
+                <h3>Chicken pufs</h3>
+                <p> Classic Chicken puffs. €7.5</p>
+            </div>
+        </section>
+        <section id="order">
+            <h2>Order</h2>
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="Address">Address:</label><br>
+                <input type="text" id="Address" name="Address"><br><br>
+                <label for="food">Select Food:</label><br>
+                <select id="food" name="food">
+                    <option value="Egg puffs">Egg puffs</option>
+                    <option value="Beef pufs">Beef pufs</option>
+                    <option value="Chicken puffs">Chicken puffs</option>
+                </select><br><br>
+                <label for="quantity">Quantity:</label><br>
+                <input type="number" id="quantity" name="quantity" min="1" value="1"><br><br>
+                <input type="submit" value="Order Now">
+            </form>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@puf&puf@gmail.com</p>
+            <p>Phone: +4917631203254</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Food Ordering Website</p>
+    </footer>
+</body>
+</html>

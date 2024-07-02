@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Food Delight</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .order-summary {
+            margin: 20px 0;
+        }
+        .order-summary h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .payment-form {
+            margin: 20px 0;
+        }
+        .payment-form h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .payment-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .payment-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .payment-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .payment-form button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment</h1>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="order-item">
+                <span>Pizza Margherita</span>
+                <span>$12.00</span>
+            </div>
+            <div class="order-item">
+                <span>Caesar Salad</span>
+                <span>$8.00</span>
+            </div>
+            <div class="order-item">
+                <span>Chocolate Cake</span>
+                <span>$5.00</span>
+            </div>
+            <div class="total">
+                Total: $25.00
+            </div>
+        </div>
+
+        <div class="payment-form">
+            <h2>Payment Details</h2>
+            <form action="submit_payment.php" method="post">
+                <label for="card-name">Name on Card</label>
+                <input type="text" id="card-name" name="card-name" required>
+
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card-number" required>
+
+                <label for="expiry-date">Expiry Date (MM/YY)</label>
+                <input type="text" id="expiry-date" name="expiry-date" required>
+
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Food Delight. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
